@@ -384,6 +384,9 @@ function createZiweiChart(birthInfo) {
         // 1. 转换为农历
         const solar = lunar_typescript_1.Solar.fromYmdHms(birthInfo.year, birthInfo.month, birthInfo.day, birthInfo.hour, birthInfo.minute, 0);
         const lunar = solar.getLunar();
+        // 晚子时（23:00-24:00）按「夜子时次日派」：日柱用次日，与八字模块保持一致
+        // （lunar-typescript 在 23:00 的 getDayGan/Zhi 返回本日甲午，会导致与子时丙子不自洽）
+        const lunarForDay = birthInfo.hour === 23 ? solar.next(1).getLunar() : lunar;
         const lunarYear = lunar.getYear();
         const lunarMonth = lunar.getMonth();
         const lunarDay = lunar.getDay();
@@ -392,8 +395,8 @@ function createZiweiChart(birthInfo) {
         const yearZhi = lunar.getYearZhi();
         const monthGan = lunar.getMonthGan();
         const monthZhi = lunar.getMonthZhi();
-        const dayGan = lunar.getDayGan();
-        const dayZhi = lunar.getDayZhi();
+        const dayGan = lunarForDay.getDayGan();
+        const dayZhi = lunarForDay.getDayZhi();
         const hourGan = lunar.getTimeGan();
         const hourZhi = lunar.getTimeZhi();
         const siZhu = {

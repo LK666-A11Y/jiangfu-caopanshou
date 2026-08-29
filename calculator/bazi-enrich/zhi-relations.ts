@@ -10,17 +10,17 @@ export type ZhiRelation = {
 };
 
 // 六冲
-const LIU_CHONG: [Dizhi, Dizhi][] = [
+export const LIU_CHONG: [Dizhi, Dizhi][] = [
   ['子','午'],['丑','未'],['寅','申'],['卯','酉'],['辰','戌'],['巳','亥']
 ];
 
 // 六合
-const LIU_HE: [Dizhi, Dizhi][] = [
+export const LIU_HE: [Dizhi, Dizhi][] = [
   ['子','丑'],['寅','亥'],['卯','戌'],['辰','酉'],['巳','申'],['午','未']
 ];
 
 // 三合局 (申子辰水 / 亥卯未木 / 寅午戌火 / 巳酉丑金)
-const SAN_HE: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
+export const SAN_HE: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
   {zhi:['申','子','辰'], wuxing:'水'},
   {zhi:['亥','卯','未'], wuxing:'木'},
   {zhi:['寅','午','戌'], wuxing:'火'},
@@ -28,7 +28,7 @@ const SAN_HE: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
 ];
 
 // 三会方 (寅卯辰东方木 / 巳午未南方火 / 申酉戌西方金 / 亥子丑北方水)
-const SAN_HUI: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
+export const SAN_HUI: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
   {zhi:['寅','卯','辰'], wuxing:'木'},
   {zhi:['巳','午','未'], wuxing:'火'},
   {zhi:['申','酉','戌'], wuxing:'金'},
@@ -36,15 +36,15 @@ const SAN_HUI: Array<{zhi: [Dizhi, Dizhi, Dizhi], wuxing: string}> = [
 ];
 
 // 相刑 (无礼之刑 子卯; 恃势之刑 寅巳申; 无恩之刑 丑戌未)
-const XIANG_XING: Array<{zhi: Dizhi[], name: string}> = [
+export const XIANG_XING: Array<{zhi: Dizhi[], name: string}> = [
   {zhi:['子','卯'], name:'无礼之刑'},
   {zhi:['寅','巳','申'], name:'恃势之刑'},
   {zhi:['丑','戌','未'], name:'无恩之刑'}
 ];
-const ZI_XING: Dizhi[] = ['辰','午','酉','亥']; // 自刑
+export const ZI_XING: Dizhi[] = ['辰','午','酉','亥']; // 自刑
 
 // 六害
-const LIU_HAI: [Dizhi, Dizhi][] = [
+export const LIU_HAI: [Dizhi, Dizhi][] = [
   ['子','未'],['丑','午'],['寅','巳'],['卯','辰'],['申','亥'],['酉','戌']
 ];
 

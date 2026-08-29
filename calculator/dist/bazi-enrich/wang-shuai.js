@@ -128,14 +128,15 @@ function judgeWangShuai(siZhu) {
     const stems = scoreStems(dm, siZhu);
     const score = +(month.score + cs.score + ground.score + stems.score).toFixed(2);
     // 阈值不对称: 月令对负向影响更直接,偏弱区门槛略宽
+    // [调参 v0.2 2026-08-29] 极旺 8→12、极弱 -8→-12：收紧从格判定，从强/从弱需全局一气才判
     let verdict;
-    if (score >= 12) // [调参 v0.2 2026-08-29] 极旺门槛 8→12：收紧从强判定，仅 score 极高才判
+    if (score >= 12)
         verdict = '极旺(可能从强)';
     else if (score >= 3)
         verdict = '偏旺';
     else if (score > -2.5)
         verdict = '中和';
-    else if (score > -12) // [调参 v0.2 2026-08-29] 极弱门槛 -8→-12：对称收紧从弱
+    else if (score > -12)
         verdict = '偏弱';
     else
         verdict = '极弱(可能从弱)';

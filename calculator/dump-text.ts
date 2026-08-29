@@ -140,6 +140,22 @@ function dumpBazi(b: any, bi: any): string[] {
     lines.push('│');
   }
 
+  // 流年/流月/流日 动态层
+  if (b.flux && b.flux.items && b.flux.items.length) {
+    lines.push(`├流年流月流日 (参照日 ${b.flux.refDate})`);
+    b.flux.items.forEach((it: any, i: number) => {
+      const isLast = i === b.flux.items.length - 1;
+      const pre = isLast ? '│ └' : '│ ├';
+      const relTxt = it.zhiRelations && it.zhiRelations.length
+        ? it.zhiRelations.map((r: any) => `${r.type}·${r.with}${r.note ? '(' + r.note + ')' : ''}`).join('、')
+        : '与命局四支无冲合刑害';
+      const ganHeTxt = it.ganHe ? ` 天干合${it.ganHe}` : '';
+      lines.push(`${pre}${it.kind} : ${it.ganZhi}  天干十神=${it.ganShiShen}${ganHeTxt}`);
+      lines.push(`${pre}  └地支关系 : ${relTxt}`);
+    });
+    lines.push('│');
+  }
+
   // enrichBazi 补层
   const en = b.enrichment;
   if (en) {

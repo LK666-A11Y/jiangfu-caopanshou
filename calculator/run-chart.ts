@@ -9,6 +9,7 @@
 import { createChart } from './yiqi-core/index';
 import { getZhiCangGanFull } from './yiqi-core/bazi';
 import { enrichBazi } from './bazi-enrich/enrich';
+import { computeFlux } from './bazi-enrich/flux';
 import * as fs from 'fs';
 
 function parseArgs(): Record<string, string> {
@@ -73,6 +74,10 @@ function main() {
     '时': chart.bazi.siZhu.hour,
   };
   chart.bazi.enrichment = enrichBazi(siZhuForEnrich);
+
+  // Step 3: 流年/流月/流日 动态层（参照日默认今天，可用 --ref-date=YYYY-MM-DD 指定）
+  const refDate = args.refDate || undefined;
+  chart.bazi.flux = computeFlux(chart.bazi.siZhu, chart.bazi.dayMaster, refDate);
 
   const json = JSON.stringify(chart, null, 2);
 

@@ -33,6 +33,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("./yiqi-core/index");
 const bazi_1 = require("./yiqi-core/bazi");
 const enrich_1 = require("./bazi-enrich/enrich");
+const flux_1 = require("./bazi-enrich/flux");
 const fs = __importStar(require("fs"));
 function parseArgs() {
     const args = {};
@@ -91,6 +92,9 @@ function main() {
         '时': chart.bazi.siZhu.hour,
     };
     chart.bazi.enrichment = (0, enrich_1.enrichBazi)(siZhuForEnrich);
+    // Step 3: 流年/流月/流日 动态层（参照日默认今天，可用 --ref-date=YYYY-MM-DD 指定）
+    const refDate = args.refDate || undefined;
+    chart.bazi.flux = (0, flux_1.computeFlux)(chart.bazi.siZhu, chart.bazi.dayMaster, refDate);
     const json = JSON.stringify(chart, null, 2);
     if (args.output) {
         fs.writeFileSync(args.output, json, 'utf-8');
