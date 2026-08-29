@@ -2,8 +2,8 @@
 
 > SkillHub「宝藏母校 Skill 大赛」参赛作品 · 江西服装学院—新生八字趣味解读Skill
 >
-> 不是算命计算器，是「自我认知镜 + 趋势提醒器」：盘面由算法产出，引导由 AI 按
-> 「指导哲学 + 现实锚点 + 知识库案例熔接」框架现跑。
+> 不是算命计算器，是「人生财务诊断模型」：盘面由算法产出，引导由 AI 按
+> 「财管/K线隐喻」框架现跑——把八字翻译成一份"出厂财报 + 年度行情"。
 
 详细说明见 [SKILL.md](./SKILL.md)（含指导哲学、知识库案例熔接、解读框架、实战示例）。
 
@@ -12,7 +12,7 @@
 ```bash
 cd calculator
 npm install
-node dist/run-chart.js --year=2006 --month=12 --day=31 --hour=23 --minute=53 --gender=male
+node dist/run-chart.js --year=2005 --month=3 --day=12 --hour=8 --minute=30 --gender=male --ref-date=2026-08-29
 node dist/dump-text.js --input=chart.json
 ```
 
