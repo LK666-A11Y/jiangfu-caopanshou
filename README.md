@@ -19,7 +19,7 @@
 
 引擎对一个**虚构示例盘**（公历 2008-02-18 12:00 男）跑出的盘面截图，参赛页/自述可直接用：
 
-![命盘操盘手示例盘面](./showcase.png)
+![命盘操盘手示例盘面](https://raw.githubusercontent.com/LK666-A11Y/jiangfu-caopanshou/main/showcase.png)
 
 （盘面仅演示格式与排版风格，**非真实个人信息**；真实使用时由用户自行输入生辰，本工具不采集、不存储。）
 
