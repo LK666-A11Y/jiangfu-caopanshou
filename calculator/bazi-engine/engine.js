@@ -1,6 +1,8 @@
 // bazi-engine —— 八字排盘引擎（已验证 17/19 命中知识库，两金标准盘逐字一致）
 // 2026-08-12 由独立 Skill 合并入「八字紫微」Skill，作为八字底层 + HTML 工具可内联引擎。
-// 用法：const { calc } = require('./calculator/bazi-engine/engine.js'); calc(2006,12,31,23,53,115.4);
+// 用法：const { calc } = require('./calculator/bazi-engine/engine.js'); calc(y, m, d, bjH, bjM, lon);
+//       lon = 出生地经度（东经，北京约 116.4 / 上海约 121.5）；bjH/bjM 为北京时间 24 小时制。
+// 注：示例一律用虚构盘，禁止在注释/文档中出现任何真实生辰（隐私红线）。
 const STEMS=["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
 const BRAN=["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
 const TERMS=[{n:"立春",lon:315,em:2,ed:4,jie:true},{n:"雨水",lon:330,em:2,ed:19},{n:"惊蛰",lon:345,em:3,ed:6,jie:true},{n:"春分",lon:0,em:3,ed:21},{n:"清明",lon:15,em:4,ed:5,jie:true},{n:"谷雨",lon:30,em:4,ed:20},{n:"立夏",lon:45,em:5,ed:6,jie:true},{n:"小满",lon:60,em:5,ed:21},{n:"芒种",lon:75,em:6,ed:6,jie:true},{n:"夏至",lon:90,em:6,ed:21},{n:"小暑",lon:105,em:7,ed:7,jie:true},{n:"大暑",lon:120,em:7,ed:23},{n:"立秋",lon:135,em:8,ed:8,jie:true},{n:"处暑",lon:150,em:8,ed:23},{n:"白露",lon:165,em:9,ed:8,jie:true},{n:"秋分",lon:180,em:9,ed:23},{n:"寒露",lon:195,em:10,ed:8,jie:true},{n:"霜降",lon:210,em:10,ed:23},{n:"立冬",lon:225,em:11,ed:7,jie:true},{n:"小雪",lon:240,em:11,ed:22},{n:"大雪",lon:255,em:12,ed:7,jie:true},{n:"冬至",lon:270,em:12,ed:22},{n:"小寒",lon:285,em:1,ed:6,jie:true},{n:"大寒",lon:300,em:1,ed:20}];

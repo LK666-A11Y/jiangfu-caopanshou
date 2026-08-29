@@ -71,7 +71,9 @@ node dist/dump-text.js --input=chart.json
 
 ## 作者
 
-LK666-A11Y · 江西服装学院 · 财务管理 2024级
+江西服装学院在校学生（匿名参赛）· License：MIT
+
+> 作者联系方式不从本仓库公开。如需联络请走 SkillHub / 赛事官方渠道。
 
 ## License
 
