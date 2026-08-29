@@ -1,6 +1,7 @@
-# 命盘操盘手
+# 江西服装学院—命盘操盘手Skill
 
-> SkillHub「宝藏母校 Skill 大赛」参赛作品
+> SkillHub「宝藏母校 Skill 大赛」参赛作品 · 创意脑洞赛道
+> 由江西服装学院在校学生为同校新生打造的「迎新破冰 + 财商启蒙」趣味工具
 >
 > 一句话：**你的生辰不是命运判决书，是一份「出厂财报 + 年度行情」；再叠上时代、土地、经历，
 > 就是一张「天时地利人和」操盘地图。** 盘面由算法精准产出，怎么读，由 AI 套一套财管语言给你——
@@ -39,7 +40,7 @@ node dist/run-chart.js --year=2005 --month=3 --day=12 --hour=8 --minute=30 --gen
 node dist/dump-text.js --input=chart.json
 ```
 
-把 `dump-text.js` 的输出交给 AI，AI 按 SKILL.md「解读框架」产出第二段引导（命盘操盘手版）。
+把 `dump-text.js` 的输出交给 AI，AI 按 SKILL.md「解读框架」产出第二段引导（江西服装学院—命盘操盘手版）。
 
 ## 作者
 
