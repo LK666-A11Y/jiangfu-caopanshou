@@ -215,9 +215,6 @@ export function createBaziChart(birthInfo: BirthInfo): BaziChart {
     // 计算纳音
     const naYin = getSiZhuNaYin(siZhu);
 
-    console.error('🔍 八字计算结果 - zhangSheng:', zhangSheng);
-    console.error('🔍 八字计算结果 - naYin:', naYin);
-
     return {
       birthInfo,
       siZhu,
