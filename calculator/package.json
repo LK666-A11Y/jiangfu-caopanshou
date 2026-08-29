@@ -1,0 +1,20 @@
+{
+  "name": "jiangfu-bazi-fun-skill",
+  "version": "0.2.0",
+  "description": "江西服装学院—新生八字趣味解读Skill —— 八字排盘 + 紫微斗数 + 调参补层（格局/旺衰/调候用神）",
+  "author": "LK666-A11Y <lk2006finance@163.com>",
+  "license": "MIT",
+  "keywords": ["bazi", "ziwei", "八字", "紫微", "skillhub", "校园文化", "新生"],
+  "scripts": {
+    "build": "tsc",
+    "chart": "node dist/run-chart.js",
+    "dump": "node dist/dump-text.js"
+  },
+  "dependencies": {
+    "lunar-typescript": "^1.8.6"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "@types/node": "^22.0.0"
+  }
+}
