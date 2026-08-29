@@ -2,7 +2,7 @@
 name: 江西服装学院—命盘操盘手Skill
 slug: jiangfu-caopanshou
 displayName: 江西服装学院—命盘操盘手Skill
-version: 1.0.11
+version: 1.0.12
 summary: 把「生辰八字」用财管语言读成一份「出厂财报 + 年度行情」——五行是资产类别、身强身弱是仓位、十神是现金流、流年是行情信号。再叠「天时（九运）× 地利（方位）× 人和（经历）」三维地图，告诉你「何时/何地/联合谁/做啥」。江服新生迎新破冰 + 财商启蒙首选趣味工具；纯文化体验，不预测吉凶，不采集不存储。
 license: MIT
 homepage: https://github.com/LK666-A11Y/jiangfu-caopanshou
